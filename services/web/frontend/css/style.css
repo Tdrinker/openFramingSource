@@ -1,0 +1,306 @@
+
+/* * * * * * * * * * */
+/* ELEMENT LEVEL CSS */
+/* * * * * * * * * * */
+
+body {
+  background: url("../images/background.png");
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+h4 {
+  text-align: center;
+}
+
+input[type=radio] {
+  box-sizing: border-box;
+}
+
+input {
+  padding:5px;
+}
+
+textarea {
+  font-family: 'Montserrat', sans-serif;
+  width:100%;
+}
+
+/* * * * * * * * * * */
+/*  CLASS LEVEL CSS  */
+/* * * * * * * * * * */
+
+
+/* CUSTOM BUTTON */
+
+/* custom button color */
+.btn-theme{color:#fff;background-color:rebeccapurple;border-color:rebeccapurple}
+
+.btn-theme:hover{color:#fff;background-color:#8442c7;border-color:#8442c7}
+.btn-theme:focus,.btn-primary.focus{box-shadow:0 0 0 .2rem #8e47d6}
+.btn-theme.disabled,
+.btn-theme:disabled{color:#fff;background-color:rebeccapurple;border-color:rebeccapurple}
+.btn-theme:not(:disabled):not(.disabled):active,
+.btn-theme:not(:disabled):not(.disabled).active,
+.show>.btn-theme.dropdown-toggle{color:#fff;background-color:#8e47d6;border-color:#000}
+.btn-theme:not(:disabled):not(.disabled):active:focus,
+.btn-theme:not(:disabled):not(.disabled).active:focus,
+.show>.btn-theme.dropdown-toggle:focus{box-shadow:0 0 0 .2rem #8e47d6}
+
+.btn-outline-theme{color:#000;background-color:transparent;background-image:none;border-color:rebeccapurple}
+.btn-outline-theme:hover{color:white;background-color:#8442c7;border-color:#8442c7}
+.btn-outline-theme:focus,
+.btn-outline-theme.focus{box-shadow:0 0 0 .2rem #8e47d6}
+.btn-outline-theme.disabled,
+.btn-outline-theme:disabled{color:#8e47d6;background-color:transparent}
+.btn-outline-theme:not(:disabled):not(.disabled):active,
+.btn-outline-theme:not(:disabled):not(.disabled).active,
+.show>.btn-outline-theme.dropdown-toggle{color:#fff;background-color:#8e47d6;border-color:#8e47d6}
+.btn-outline-theme:not(:disabled):not(.disabled):active:focus,
+.btn-outline-theme:not(:disabled):not(.disabled).active:focus,
+.show>.btn-outline-theme.dropdown-toggle:focus{box-shadow:0 0 0 .2rem #8e47d6}
+/* end custom button color */
+
+.card{
+  border-radius: 8px;
+  padding: 20px;
+  display: block;
+  vertical-align: middle;
+  font-size: 19px;
+  width: 100%;
+}
+
+.card-header{
+  text-align: center;
+}
+
+.card-main {
+  background-color: #FFFFFF;
+  border-color:#c8c8c8;
+  padding: 0;
+}
+
+.card-text {
+  margin-top: 0;
+}
+
+.logo {
+  width: 10%;
+  margin-right: 1%;
+}
+
+.navbar {
+  background-color: #FFFFFF;
+  -webkit-box-shadow: -1px 6px 12px 0px rgba(207,207,207,0.82);
+  -moz-box-shadow: -1px 6px 12px 0px rgba(207,207,207,0.82);
+  box-shadow: -1px 6px 12px 0px rgba(207,207,207,0.82);
+  font-family: 'Monda', sans-serif;
+  font-size: 1.5rem;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 0.7rem;
+  padding-left: 0.7rem;
+}
+
+.navbar a {
+  font-size: 1.2rem;
+}
+
+/* always have some space below the content so that we can scroll properly*/
+.main-content {
+  margin-bottom: 10%;
+  padding: 50px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.spacer {
+  height: 10px;
+  width: 100%;
+  display: block;
+}
+
+.spacer-m {
+  height: 50px;
+  width: 100%;
+  display: block;
+}
+
+.spacer-l {
+  height: 75px;
+  width: 100%;
+  display: block;
+}
+
+
+.row {
+  margin-bottom: 8px;
+  margin-left: 0;
+}
+
+
+.hidden {
+  display: none !important;
+}
+
+.new-user {
+  font-size: 85%;
+  margin: 0;
+  padding: 0;
+}
+
+/* SLIDER */
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/*!* The slider *!*/
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: rebeccapurple;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rebeccapurple;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.input-help {
+  margin: 2%;
+}
+
+.help-div {
+  display: none; /* to start info sections hidden */
+  font-size: 16px;
+}
+
+
+#guide img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+
+
+/* * * * * * * * * */
+/*  DEMO PAGE-SPEC */
+/* * * * * * * * * */
+
+h5 {
+  text-align: center;
+}
+
+.accordion-arrow {
+  /*padding-left: 200%;*/
+  float: right !important;
+  font-size: 30px;
+  color: gray;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.s1-img-col {
+  margin-top: 3%;
+}
+
+.s1-text-col {
+  margin-top: 4%;
+}
+
+.step-header {
+  color: #f35f0b;
+}
+
+.step-p-general {
+  padding: 0 200px 0 200px;
+}
+
+#filters .badge {
+  margin-top: 1.3%;
+  margin-left: 1%;
+}
+
+#filters .col {
+  margin-left: 15%;
+  font-size: 1rem;
+}
+
+#gun-violence .main-content {
+  margin-bottom: 0;
+}
+
+#gun-violence ul {
+  margin: 0;
+  padding: 0;
+}
+
+#gunv-head-section.main-content {
+  padding: 50px 200px 0 200px;
+}
+
+#gunv-prep-section h5 {
+  color: #ff00c7
+}
+
+#gunv-prep-section p {
+  padding: 0 300px 0 300px;
+}
+
+#gunv-step1-section p {
+  padding: 0 320px 50px 320px;
+}
+

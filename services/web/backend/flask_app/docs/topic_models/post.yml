@@ -1,0 +1,112 @@
+This URL refers to a post request for creating a new Topic Model instance.
+---
+  tags:
+    - Topic Model
+  parameters:
+    - name: name
+      in: body
+      type: string
+      description: Topic Model name.
+      required: true
+    - name: num_topics
+      in: body
+      type: int
+      description: number of topics to produce.
+      required: true
+    - name: notify_at_email
+      type: string
+      in: body
+      description: email to which send the results to
+      required: true
+    - name: remove_stopwords
+      type: boolean
+      in: body
+      description: whether to remove stopwords.
+      required: true
+      default: false
+    - name: remove_punctuation
+      type: boolean
+      in: body
+      description: whether to remove stopwords.
+      required: true
+      default: false
+    - name: extra_stopwords
+      type: array
+      in: body
+      description: any extra stopwords one may want to remove.
+      items:
+        type: string
+      required: false
+    - name: phrases_to_join
+      type: array
+      in: body
+      description: list of separated words you want to consider as one.
+      items:
+        type: string
+      required: false
+    - name: do_lemmatizing
+      type: boolean
+      in: body
+      description: whether to do lemmatizing.
+      default: false
+      required: true
+    - name: do_stemming
+      type: boolean
+      in: body
+      description: whether to do stemming.
+      default: false
+      required: false
+  responses:
+    200:
+      description: details related to a Topic Model instance.
+      schema:
+        id: Topic Model
+        properties:
+          id:
+            type: integer
+            description: Topic Model id.
+          name:
+            type: string
+            description: Topic Model name.
+          num_topics:
+            type: int
+            description: number of topics to produce.
+          topic_names:
+            type: array
+            description: list of topic names.
+            items:
+              type: string
+          notify_at_email:
+            type: string
+            description: email to which send the results to
+          status:
+            type: string
+            description: tells the status whether training has started or not.
+            default: started
+          metrics:
+            type: object
+            description: contains the k-fold cross validation metrics related to the training set.
+          remove_stopwords:
+            type: boolean
+            description: whether to remove stopwords.
+          remove_punctuation:
+            type: boolean
+            description: whether to remove stopwords.
+          extra_stopwords:
+            type: array
+            description: any extra stopwords one may want to remove.
+            items:
+              type: string
+          phrases_to_join:
+            type: array
+            description: list of separated words you want to consider as one.
+            items:
+              type: string
+          do_lemmatizing:
+            type: boolean
+            description: whether to do lemmatizing.
+          do_stemming:
+            type: boolean
+            description: whether to do stemming.
+    500:
+      description: fails if a string is provided or if topic model does not exist

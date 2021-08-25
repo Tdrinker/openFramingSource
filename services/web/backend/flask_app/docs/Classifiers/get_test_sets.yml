@@ -1,0 +1,25 @@
+This URL refers to a get request for getting details of test files(without predictions) related to a single classifier instance.
+---
+  tags:
+    - classifier Predictions
+  parameters:
+    - name: classifier_id
+      in: path
+      type: integer
+      description: id of the classifier you want to get test sets of.
+      required: true
+  responses:
+    200:
+      description: details related to a classifier instance
+      schema:
+        id: Classifier test set
+        properties:
+          test_sets:
+            type: array
+            description: an array containing a list of all test sets associated with that topic model.
+            items:
+              type: string
+
+
+    500:
+      description: fails if a string is provided or if the classifier or test set does not exist

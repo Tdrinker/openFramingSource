@@ -1,0 +1,94 @@
+<html>
+<head>
+  <!-- STYLES -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+        integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/openframing.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  <!-- CDNS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gojs/1.8.2/go-debug.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <!-- LOCAL FILES -->
+  <script type="module" src="js/client.js"></script>
+  <script type="module" src="js/step2.js"></script>
+
+
+  <title>Open Framing</title>
+</head>
+
+<body>
+
+<div class="main-content container">
+  <div class="row">
+    <div id="framing-main" class="col-md-12">
+      <div id="policy-issue" class="card card-main">
+        <div class="card-header">Decide Frames Inductively and Deductively</div>
+        <div class="card-body">
+          <p>In <strong>Step 2,</strong> we recommend you consult the LDA topic modeling results from
+            <strong>Step 1</strong> (inductive) and previous literature about media framing of the issue of your
+            interest (deductive), and then decide a list of frames to be analyzed. You may include both "generic frames"
+            such as <i>human interest, conflict, attribution of responsibility, and economic consequences</i>, which can be
+            applied to the analysis of a variety of issues, and "issue-specific frames," which are often used to discuss
+            a particular issue. See our demo for more information about how to decide frames to be analyzed.
+          </p>
+          <img src="images/step2.png" alt="Step 2 Flowchart" style="width: 100%">
+
+          <hr>
+          <div class="spacer"></div>
+
+<!--    ENTER ID      -->
+          <p>If you have already trained a topic model on our system and would like to see the results of training,
+            please see the email sent from OpenFraming containing your topic model ID and either enter it below or
+            click the link found in the email.
+          </p>
+          <div class="row">
+            <label style="margin-right: 10px;">ID: </label>
+            <input type="text" id="tmp-id" name="tmp-id" value=""><br>
+          </div>
+          <div class="row">
+            <a id="submit2" style="width: 20%; color: white; margin-left: 30px;" class="btn btn-theme mt-2 btn-block">Submit</a>
+          </div>
+
+          <br>
+          <div id="error2" class="hidden card card-main" style="background: #ffe3e3">
+            <div class="card-body">
+              <p id="error2-text"  class="new-user"><b>Error panel 2</b></p>
+            </div>
+          </div>
+
+
+<!--    PREVIEW SECTION      -->
+
+          <div id="preview-info" class="hidden">
+            <h4><strong>See a preview for your topic model below:</strong></h4>
+            <div class="row">
+              <div class="col-sm"><b>Topic model name</b></div>
+              <div class="col-sm" id="tm-prev-name"></div>
+            </div>
+            <div class="row">
+              <div class="col-sm"><b>Number of topics</b></div>
+              <div class="col-sm" id="tm-prev-num"></div>
+            </div>
+            <h4>Topic previews:</h4>
+            <!-- Section gets added to dynamically -->
+            <div id="previews"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

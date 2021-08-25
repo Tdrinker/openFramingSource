@@ -1,0 +1,48 @@
+This URL refers to a get request for sending a post request to create a new classifier instance.
+---
+  tags:
+    - classifier
+  parameters:
+    - name: name
+      in: body
+      type: string
+      description: name you would like to give to the classifier
+      required: true
+    - name: notify_at_email
+      in: body
+      type: string
+      description: which email would you like to be informed to once training is complete.
+      required: true
+    - name: category_names
+      in: body
+      type: array
+      description: a list of all the categories
+      required: true
+      items:
+        type: string
+  responses:
+    200:
+      description: details of the created. classifier instance
+      schema:
+        id: Classifier
+        properties:
+          id:
+            type: integer
+            description: classifier id
+          name:
+            type: string
+            description: classifier name
+          category_names:
+            type: array
+            description: list of categories
+            items:
+              type: string
+          status:
+            type: string
+            description: tells the status whether training has started or not.
+            default: started
+          metrics:
+            type: object
+            description: contains the k-fold cross validation metrics related to the training set.
+    500:
+      description: fails if any parameter is not provided or contain unacceptable values.

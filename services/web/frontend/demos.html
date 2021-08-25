@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- STYLES -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+          integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/openframing.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Monda&display=swap" rel="stylesheet">  <!-- Monda font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> <!-- Roboto font -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <!-- CDNS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gojs/1.8.2/go-debug.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://d3js.org/d3-time.v2.min.js"></script>
+    <script src="https://d3js.org/d3-time-format.v3.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- LOCAL JS -->
+    <script type="application/javascript" src="js/demos.js"></script>
+
+    <title>Open Framing</title>
+</head>
+    <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <a class="navbar-brand" href="home.html"><img src="images/openframing.png" class="logo">OpenFraming AI</a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="playground.html">Get Started</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="demos.html">Demo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="faq.html">FAQ</a>
+            </li>
+          <li class="nav-item">
+            <a target="_blank" class="nav-link" href="https://github.com/vibss2397/openFraming/tree/ui-revamp">Source Code</a>
+          </li>
+          <li class="nav-item">
+            <a target="_blank" class="nav-link" href="http://www.openframing.org:5000/docs/">API</a>
+          </li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <div class="card card-main">
+            <ul class="nav nav-tabs" id="demo-tabs" role="tablist">
+                <li class="nav-item active" role="presentation">
+                    <a id="gunv-tab" class="nav-link active" href="#gun-violence" aria-controls="gun-violence" role="tab" data-toggle="tab">Gun Violence</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a id="cov-us-tab" class="nav-link" href="#covid-us" aria-controls="covid-us" role="tab" data-toggle="tab">Covid-19</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="demo-tab-content">
+<!--  COVID-19 US TAB  -->
+                <div style="margin: 5%;" class="tab-pane fade step-p-general" id="covid-us" role="tabpanel" aria-labelledby="covid-us-tab">
+                    <h4><strong>Case Study 2:<br>International news coverage of the Covid-19 pandemic</strong></h4>
+                    <br>
+                    <p>
+                        In addition to framing analysis, you can also use OFAI to conduct LDA topic modeling analysis to
+                        understand major topics in text documents.  Here is a demonstration of how we analyzed the topics
+                        of the U.S. and South Korean news coverage of the Covid-19 pandemic between Janurary 2020 and
+                        March 2021.  More information about this project can be found:
+                        <a target="_blank" href="https://covid19.philemerge.com/">https://covid19.philemerge.com/</a>
+                    </p>
+                    <br>
+                    <h4 style="text-align: left !important;">Framing of Covid-19 in U.S. news media over time </h4>
+                    <div id="cov-us-chart" class="chart"></div>
+                    <hr>
+                    <div class="spacer-m"></div>
+                    <h4 style="text-align: left !important;">Framing of Covid-19 in South Korean news media over time </h4>
+                    <div id="cov-ko-chart" class="chart"></div>
+                </div>
+<!--  GUN VIOLENCE TAB  -->
+                <div style="margin: 5%;" class="tab-pane fade show active" id="gun-violence" role="tabpanel" aria-labelledby="gun-violence-tab">
+
+                    <div id="gunv-head-section" class="main-content">
+                        <div class="container">
+                            <h4><strong>Case Study 1:<br>Media framing of U.S. gun violence</strong></h4>
+                            <br>
+                            <p>
+                                In light of the rise of gun violence in the United States, the goal of the research
+                                project is to examine how the news media cover the gun violence issue and its impact
+                                on public opinion.<br><br>
+                                Here is a demonstration of how we can use OFAI's five-step framing analysis approach
+                                to answer the research question.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="accordion">
+    <!--     PREP STEP     -->
+                        <div class="card">
+                            <button onclick="toggleArrow(1)" style="padding: 0; width: 100%;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <h5 id="headingOne" class="mb-0 step-header">Preparation: Data Collection<i id="arrow1" class="fa fa-caret-down accordion-arrow" aria-hidden="true"></i></h5>
+                            </button>
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card-body">
+                                    <div id="gunv-prep-section" class="main-content">
+                                        <div class="container">
+                                          <p>
+                                            We used Crimson Hexagon's ForSight platform (now Brandwatch) to retrieve relevant news
+                                            articles from a list of 25 traditional and emerging media outlets.<br><br>
+                                            Using the keyword combination (gun OR firearm OR nra OR "2nd amendment" OR "second
+                                            amendment" OR AR15 OR "assault weapon" OR rifle OR "brady act" OR "brady bill" OR
+                                            "shooting"), we collected a total of 42,917 articles from 2018.
+                                          </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    <!--     STEP ONE     -->
+                        <div class="card">
+                            <button onclick="toggleArrow(2)" style="padding: 0; width: 100%;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <h5 id="headingTwo" class="mb-0 step-header">Step 1:  Explore topics related to gun violence<i id="arrow2" class="fa fa-caret-down accordion-arrow" aria-hidden="true"></i></h5>
+                            </button>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="card-body">
+                                    <div id="gunv-step1-section" class="main-content">
+                                        <div class="container">
+                                            <p>
+                                                We used the LDA topic modeling to explore prominent topics in these news articles.<br><br>
+
+                                                We tried 5, 10, and 15 topics, and below is an example of a 5-topic outputs.
+                                            </p>
+                                            <div class="card card-main" style="background: #dee1e3;">
+                                                <div class="card-body">
+                                                    <h5><b>Examples of manually-assigned labels on topics</b></h5>
+                                                    <div class="row">
+                                                        <div class="col s1-text-col">
+                                                            Based on the 5-topic LDA output, we can manually assign labels to these topics:<br>
+                                                            1) mass shootings<br>
+                                                            2) police officers<br>
+                                                            3) school shootings and demonstrations<br>
+                                                            4) gun rights and gun control<br>
+                                                            5) the second amendment
+                                                        </div>
+                                                        <div class="col-7 s1-img-col"><img src="images/demo_f1.svg" style="width: 100%;"></div>
+                                                    </div>
+                                                    <div class="spacer-m"></div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            Based on the 10-topic LDA output, we can manually assign labels to these topics:<br>
+                                                            1) gun rights groups and gun sales<br>
+                                                            2) the second amendment<br>
+                                                            3) school shootings<br>
+                                                            4) police officers<br>
+                                                            5) politics<br>
+                                                            6) mass shootings<br>
+                                                            7) mental health<br>
+                                                            8) children and family<br>
+                                                            9) student-led demonstrations<br>
+                                                            10) gun control
+                                                        </div>
+                                                        <div class="col-7 s1-img-col"><img src="images/demo_f2.svg" style="width: 100%;"></div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <button onclick="toggleArrow(3)" style="padding: 0; width: 100%;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <h5 id="headingThree" class="mb-0 step-header">Step 2: Decide frames inductively and deductively<i id="arrow3" class="fa fa-caret-down accordion-arrow" aria-hidden="true"></i></h5>
+                            </button>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                <div class="card-body">
+                                    <div id="gunv-step2-section" class="main-content">
+                                        <div class="container">
+<!--                                            <h5 class="step-header"><strong>Step 2: Decide frames inductively and deductively</strong></h5>-->
+<!--                                            <br>-->
+                                            <p class="step-p-general">
+                                                Based on the LDA modeling results from Step 1 and the literature review of the media
+                                                framing of gun violence, we decided the following list of frames:<br><br>
+
+                                                &emsp;1. Gun/2nd Amendment rights<br>
+                                                &emsp;2. Gun control/regulation<br>
+                                                &emsp;3. Politics<br>
+                                                &emsp;4. Mental health<br>
+                                                &emsp;5. School or public space safety<br>
+                                                &emsp;6. Race/ethnicity<br>
+                                                &emsp;7. Public opinion<br>
+                                                &emsp;8. Society/culture<br>
+                                                &emsp;9. Economic consequences<br><br>
+
+                                                Note that some frames are issue-specific frames that are unique to the media coverage of
+                                                gun violence such as "gun/2nd Amendment rights" and "mental health," other frames are
+                                                generic frames that apply to all kinds of issues including gun violence such as
+                                                "economic consequences."<br><br>
+
+                                                It is also important to note that although the LDA topic modeling results do not have
+                                                explicit information related to "society/culture," we still include it because it is a
+                                                media frame discussed in the previous literature about gun violence media coverage. It
+                                                is possible that we would end up finding that this frame appears very rarely in our data.
+                                                This would still be an important finding. After all, media framing is not just about
+                                                inclusion and emphasis but also about exclusion.
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <button onclick="toggleArrow(4)" style="padding: 0; width: 100%;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <h5 id="headingFour" class="mb-0 step-header">Step 3: Label frames with content analysis<i id="arrow4" class="fa fa-caret-down accordion-arrow" aria-hidden="true"></i></h5>
+                            </button>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                                <div class="card-body">
+                                    <div id="gunv-step3-section" class="main-content">
+                                        <div class="container">
+<!--                                            <h5 class="step-header"><strong>Step 3: Label frames with content analysis</strong></h5>-->
+<!--                                            <br>-->
+                                            <p class="step-p-general">
+                                                We then drew a sample of over 2,000 articles, and recruited two communication students
+                                                to manually annotate the headlines to determine 1) whether the headline is relevant to
+                                                gun violence, and 2) the main frame of the headline based on the list of nine frames we
+                                                decided from Step 2. We used the quantitative content analysis in communication research
+                                                to annotate the data, which involves creating a codebook and checking intercoder reliability.
+                                            </p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <button onclick="toggleArrow(5)" style="padding: 0; width: 100%;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                <h5 id="headingFive" class="mb-0 step-header">Step 4: Build a frame classification model with Deep Learning<i id="arrow5" class="fa fa-caret-down accordion-arrow" aria-hidden="true"></i></h5>
+                            </button>
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                                <div class="card-body">
+                                    <div id="gunv-step4-section" class="main-content">
+                                        <div class="container">
+<!--                                            <h5 class="step-header"><strong>Step 4: Build a frame classification model with Deep Learning</strong></h5>-->
+<!--                                            <br>-->
+                                            <p class="step-p-general">
+                                                Based on the annotated sample and the state-of-the-art multilingual deep learning model
+                                                XLM-Roberta (Conneau et al., 2019), we trained a new model to classify media frames in
+                                                headlines. In order to assess the model performance, we implemented the 5-fold
+                                                cross-validation approach. The model to predict frames in the English news headlines
+                                                reached 0.83 precision and 0.83 recall, which are considered satisfactory according
+                                                to the communication research standard.
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <button onclick="toggleArrow(6)" style="padding: 0; width: 100%;" class="btn btn-link" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                                <h5 id="headingSix" class="mb-0 step-header">Step 5: Predict Frames with Deep Learning<i id="arrow6" class="fa fa-caret-up accordion-arrow" aria-hidden="true"></i></h5>
+                            </button>
+                            <div id="collapseSix" class="collapse show" aria-labelledby="headingSix" data-parent="#accordion">
+                                <div class="card-body">
+                                    <div id="gunv-step5-section" class="main-content">
+                                        <div class="container">
+<!--                                            <h5 class="step-header"><strong>Step 5: Predict Frames with Deep Learning</strong></h5>-->
+<!--                                            <br>-->
+                                            <p class="step-p-general">
+                                                Using the model trained from Step 4, we predicted the frames of the remaining English
+                                                news headlines about the U.S. gun violence issue in 2018 as well as the previous two
+                                                years. The results are visualized below.
+                                            </p>
+
+                                        </div>
+                                        <div class="spacer-m"></div>
+                                        <div class="row">
+
+                                            <div class="col">
+                                                <div class="container">
+                                                    <h5><strong>Filter by:</strong></h5>
+                                                    <br>
+                                                    <div id="filters" class="row">
+                                                        <div class="col">
+                                                            <h6>Political Leaning:</h6>
+                                                            <input id="left" type="checkbox" value="left" onclick="check_clicked('left')">
+                                                            <label for="left">
+                                                                <span>Liberal</span>
+                                                                <span class="position-absolute badge bg-primary top-0 start-100 translate-middle p-2 rounded-circle">
+                                            </span>
+                                                            </label><br>
+
+                                                            <input id="right" type="checkbox" value="right" onclick="check_clicked('right')">
+                                                            <label for="right">
+                                                                <span>Conservative</span>
+                                                                <span class="position-absolute badge bg-danger top-0 start-100 translate-middle p-2 rounded-circle">
+                                            </span>
+                                                            </label><br>
+
+                                                            <input id="neutral" type="checkbox" value="neutral" onclick="check_clicked('neutral')">
+                                                            <label for="neutral">
+                                                                <span>Mainstream</span>
+                                                                <span class="position-absolute badge bg-success top-0 start-100 translate-middle p-2 rounded-circle">
+                                            </span>
+                                                            </label><br>
+                                                        </div>
+                                                        <div class="col">
+                                                          <h6>Year:</h6>
+                                                          <input type="radio" id="2016" name="year-check" value="1" onclick="check_clicked('2016')">
+                                                          <label for="2016">2016</label><br>
+
+                                                          <input type="radio" id="2017" name="year-check" value="2" onclick="check_clicked('2017')">
+                                                          <label for="2017">2017</label><br>
+
+                                                          <input type="radio" id="2018" name="year-check" value="3" onclick="check_clicked('2018')">
+                                                          <label for="2018">2018</label><br>
+<!--                                                          <input type="radio" id="2016" class="2016 year-check" value="2016" onclick="check_clicked('2016')">-->
+<!--                                                          <label for="2016">2016</label><br>-->
+
+<!--                                                          <input type="radio" id="2017" class="2017 year-check" value="2017" onclick="check_clicked('2017')">-->
+<!--                                                          <label for="2017">2017</label><br>-->
+
+<!--                                                          <input type="radio" id="2018" class="2018 year-check" value="2018" onclick="check_clicked('2018')">-->
+<!--                                                          <label for="2018">2018</label>-->
+
+<!--                                                            &emsp;&nbsp;<input id="2016" class="form-check-input 2016 year-check" type="checkbox" value="2016" onclick="check_clicked('2016')">-->
+<!--                                                            <label for="2016" class="form-check-label">2016</label><br>-->
+
+<!--                                                            &emsp;&nbsp;<input id="2017" class="form-check-input 2017 year-check" type="checkbox" value="2017" onclick="check_clicked('2017')">-->
+<!--                                                            <label for="2017" class="form-check-label">2017</label><br>-->
+
+<!--                                                            &emsp;&nbsp;<input id="2018" class="form-check-input 2018 year-check" type="checkbox" value="2018" onclick="check_clicked('2018')">-->
+<!--                                                            <label for="2018" class="form-check-label">2018</label>-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div style="padding: 0; width: 50%;" id="gunv-bars" class="bar-graph"></div>
+                                                <br><br>
+                                                <div style="padding: 0; width: 50%;" id="gunv-chart" class="chart"></div>
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="card pull-right" style="width: 18rem;">
+                                                    <div class="card-header">News Sites</div>
+                                                    <ul id="news-list" class="list-group list-group-flush"></ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-right"></div>
+        </div>
+    </div>
+    </body>
+</html>

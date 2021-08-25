@@ -1,0 +1,40 @@
+This URL refers to a post request for uploading training file for a classifier.
+---
+  tags:
+    - classifier
+  parameters:
+    - name: id
+      in: path
+      type: int
+      description: classifier id
+    - name: file
+      in: body
+      type: string
+      description: training file you would like to upload
+      required: true
+  responses:
+    200:
+      description: updated instance of the classifier, with it's status set to training....
+      schema:
+        id: Classifier
+        properties:
+          id:
+            type: integer
+            description: classifier id
+          name:
+            type: string
+            description: classifier name
+          category_names:
+            type: array
+            description: list of categories
+            items:
+              type: string
+          status:
+            type: string
+            description: tells the status whether training has started or not.
+            default: training
+          metrics:
+            type: object
+            description: contains the k-fold cross validation metrics related to the training set.
+    500:
+      description: fails if there is no file in the body or file contains a different format.

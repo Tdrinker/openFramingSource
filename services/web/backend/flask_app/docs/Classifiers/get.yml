@@ -1,0 +1,19 @@
+This endpoint is related to a get request for getting details regarding all the classifiers.
+(Will be discarded in the future or set for admin.)
+---
+  tags:
+    - classifier
+  responses:
+    200:
+      description: details related to all the classifier instances in the system.
+      schema:
+        id: Classifiers
+        properties:
+          classifiers:
+            type: array
+            description: an array of all the classifiers.
+            items:
+              type: object
+              description: single classifer instance.
+              default: []
+            

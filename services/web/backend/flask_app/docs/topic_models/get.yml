@@ -1,0 +1,17 @@
+This URL refers to a get request for getting details of a all the Topic Models.
+(will remove this in the future.)
+---
+  tags:
+    - Topic Model
+  responses:
+    200:
+      description: details related to a Topic Model instance.
+      schema:
+        id: Topic Models
+        properties:
+          topic_models:
+            type: array
+            description: an array of all the topic models.
+            items:
+              type: Object
+              description: single topic model instance.

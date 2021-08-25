@@ -1,0 +1,63 @@
+This URL refers to a get request for getting details of a single Topic Model.
+---
+  tags:
+    - Topic Model
+  parameters:
+    - name: topic_model_id
+      in: path
+      type: integer
+      required: true
+  responses:
+    200:
+      description: details related to a Topic Model instance.
+      schema:
+        id: Topic Model
+        properties:
+          id:
+            type: integer
+            description: Topic Model id.
+          name:
+            type: string
+            description: Topic Model name.
+          num_topics:
+            type: int
+            description: number of topics to produce.
+          topic_names:
+            type: array
+            description: list of topic names.
+            items:
+              type: string
+          notify_at_email:
+            type: string
+            description: email to which send the results to
+          status:
+            type: string
+            description: tells the status whether training has started or not.
+            default: started
+          metrics:
+            type: object
+            description: contains the k-fold cross validation metrics related to the training set.
+          remove_stopwords:
+            type: boolean
+            description: whether to remove stopwords.
+          remove_punctuation:
+            type: boolean
+            description: whether to remove stopwords.
+          extra_stopwords:
+            type: array
+            description: any extra stopwords one may want to remove.
+            items:
+              type: string
+          phrases_to_join:
+            type: array
+            description: list of separated words you want to consider as one.
+            items:
+              type: string
+          do_lemmatizing:
+            type: boolean
+            description: whether to do lemmatizing.
+          do_stemming:
+            type: boolean
+            description: whether to do stemming.
+    500:
+      description: fails if a string is provided or if topic model does not exist

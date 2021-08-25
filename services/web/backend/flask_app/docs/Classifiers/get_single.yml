@@ -1,0 +1,36 @@
+This URL refers to a get request for getting details of a single classifier.
+---
+  tags:
+    - classifier
+  parameters:
+    - name: classifier_id
+      in: path
+      type: integer
+      required: true
+  responses:
+    200:
+      description: details related to a classifier instance
+      schema:
+        id: Classifier
+        properties:
+          id:
+            type: integer
+            description: classifier id
+          name:
+            type: string
+            description: classifier name
+          category_names:
+            type: array
+            description: list of categories
+            items:
+              type: string
+          status:
+            type: string
+            description: tells the status whether training has started or not.
+            default: started
+          metrics:
+            type: object
+            description: contains the k-fold cross validation metrics related to the training set.
+
+    500:
+      description: fails if a string is provided or if classifier does not exist

@@ -1,0 +1,37 @@
+This URL refers to a get request for getting details about topics post training.
+---
+  tags:
+    - Topic Model Preview
+  parameters:
+    - name: topic_model_id
+      in: path
+      type: integer
+      required: true
+  responses:
+    200:
+      description: details related to a Topic Model instance.
+      schema:
+        id: Topic Model Previews
+        properties:
+          metrics:
+            type: object
+            description: contains the k-fold cross validation metrics related to the training set.
+          topic_previews:
+            type: array
+            description: list of details related to all topics and keywords.
+            items:
+              type: object
+              description: contains keywords and examples
+              properties:
+                keywords:
+                  type: array
+                  description: list of all the keywords.
+                  items:
+                    type: string
+                examples:
+                  type: array
+                  description: list of all the examples related to a keyword.
+                  items:
+                    type: string
+    500:
+      description: fails if a string is provided or if topic model does not exist

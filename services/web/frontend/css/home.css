@@ -1,0 +1,201 @@
+
+/* * * * * * * * * * */
+/* ELEMENT LEVEL CSS */
+/* * * * * * * * * * */
+
+body {
+    background-image: url('../images/cloud.svg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: right top;
+}
+
+h3 {
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.1px;
+}
+
+/* * * * * * * * * * */
+/*  CLASS LEVEL CSS  */
+/* * * * * * * * * * */
+
+.how-line-col {
+    margin-top: 3%;
+    text-align: center;
+}
+
+.how-btn-col {
+    margin-top: 1.5%;
+    margin-right: 2%;
+    text-align: center;
+}
+
+.logo {
+    width: 10%;
+    margin-right: 1%;
+}
+
+/* always have some space below the content so that we can scroll properly*/
+.main-content-top {
+    padding: 50px 300px 50px 300px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.spacer {
+    height: 50px;
+    width: 100%;
+    display: block;
+}
+
+.navbar {
+    background-color: #FFFFFF;
+    -webkit-box-shadow: -1px 6px 12px 0px rgba(207,207,207,0.82);
+    -moz-box-shadow: -1px 6px 12px 0px rgba(207,207,207,0.82);
+    box-shadow: -1px 6px 12px 0px rgba(207,207,207,0.82);
+    font-family: 'Monda', sans-serif;
+    font-size: 1.5rem;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0.7rem;
+    padding-left: 0.7rem;
+}
+
+
+.navbar a {
+    font-size: 1.2rem;
+}
+
+.what-text-col {
+    margin-top: 3%;
+    /*margin-left: 8%;*/
+    margin-right: 5%;
+}
+
+.what-img-col {
+    margin-bottom: 2%;
+    margin-left: 3%;
+    text-align: center;
+}
+
+/*.what-text-col {*/
+/*    margin-top: 3%;*/
+/*    margin-left: 0;*/
+/*    !*margin-left: 5%;*!*/
+/*}*/
+
+/*.what-img-col {*/
+/*    margin-bottom: 2%;*/
+/*    !*margin-left: 0%;*!*/
+/*    !*margin-right: 10%;*!*/
+/*    margin-right: 0;*/
+/*    text-align: center;*/
+/*}*/
+
+/* custom button color */
+.btn-theme{color:#fff;background-color:rebeccapurple;border-color:rebeccapurple}
+
+.btn-theme:hover{color:#fff;background-color:#8442c7;border-color:#8442c7}
+.btn-theme:focus,.btn-primary.focus{box-shadow:0 0 0 .2rem #8e47d6}
+.btn-theme.disabled,
+.btn-theme:disabled{color:#fff;background-color:#8e47d6;border-color:#8e47d6}
+.btn-theme:not(:disabled):not(.disabled):active,
+.btn-theme:not(:disabled):not(.disabled).active,
+.show>.btn-theme.dropdown-toggle{color:#fff;background-color:#8e47d6;border-color:#000}
+.btn-theme:not(:disabled):not(.disabled):active:focus,
+.btn-theme:not(:disabled):not(.disabled).active:focus,
+.show>.btn-theme.dropdown-toggle:focus{box-shadow:0 0 0 .2rem #8e47d6}
+
+.btn-outline-theme{color:#000;background-color:transparent;background-image:none;border-color:rebeccapurple}
+.btn-outline-theme:hover{color:white;background-color:#8442c7;border-color:#8442c7}
+.btn-outline-theme:focus,
+.btn-outline-theme.focus{box-shadow:0 0 0 .2rem #8e47d6}
+.btn-outline-theme.disabled,
+.btn-outline-theme:disabled{color:#8e47d6;background-color:transparent}
+.btn-outline-theme:not(:disabled):not(.disabled):active,
+.btn-outline-theme:not(:disabled):not(.disabled).active,
+.show>.btn-outline-theme.dropdown-toggle{color:#fff;background-color:#8e47d6;border-color:#8e47d6}
+.btn-outline-theme:not(:disabled):not(.disabled):active:focus,
+.btn-outline-theme:not(:disabled):not(.disabled).active:focus,
+.show>.btn-outline-theme.dropdown-toggle:focus{box-shadow:0 0 0 .2rem #8e47d6}
+/* end custom button color */
+
+/* * * * * * * * */
+/* ID LEVEL CSS  */
+/* * * * * * * * */
+#head-section h3 {
+    text-align: left !important;
+}
+
+#head-section p {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+#how-section p {
+    margin-right: 0 !important;
+}
+
+#pubs-section h6 {
+    text-align: center;
+}
+
+#pubs-section p {
+    font-size: 16px;
+}
+
+#what-section img {
+    min-width: 200px !important;
+    max-width: 350px !important;
+    width: 85%;
+    /*height: 5%;*/
+}
+
+
+
+/* * * * * * */
+/* FAQ PAGE  */
+/* * * * * * */
+
+.accordion-arrow {
+    float: right !important;
+    font-size: 30px;
+    color: gray;
+}
+
+.card-header h5 {
+    text-align: left;
+}
+
+.card-header button {
+    font-size: 20px;
+}
+
+#faq-page.main-content-top {
+    padding: 50px !important;
+    font-family: 'Roboto', sans-serif;
+}
+
+#faq-page h3 {
+    text-align: left !important;
+}
+
+#faq-page ul {
+    font-size: 18px;
+}
+
+#faq-page li {
+    padding: 0.75% 0 0.75% 0;
+}
+
+#faq-page img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}

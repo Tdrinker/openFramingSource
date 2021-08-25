@@ -1,0 +1,27 @@
+This URL refers to a get request for downloading the updated file with predictions for the test set
+---
+  tags:
+    - classifier Predictions
+  parameters:
+    - name: classifier_id
+      in: path
+      type: integer
+      description: id of the classifier you want to get test sets of.
+      required: true
+    - name: test_set_id
+      in: path
+      type: integer
+      description: test_set for which this test file will be uploaded.
+      required: true
+  responses:
+    200:
+      description: details related to a classifier instance
+      schema:
+        id: Classifier File
+        properties:
+          file:
+            type: string
+            description: csv file which contains all the predictions related to test sets.
+
+    500:
+      description: fails if a string is provided, if the classifier or test set does not exist or status of test set is 'completed'.

@@ -1,0 +1,23 @@
+[flake8]
+# Use the google convention for docstrings
+convention = google
+
+# https://pypi.org/project/flake8-black/
+# Recommend matching the black line length (default 88),
+# rather than using the flake8 default of 79:
+max-line-length = 88
+extend-ignore =
+    W
+    E1
+    E2
+    E3
+    E4
+    E5
+
+    # Allow lambda
+    E731
+    #
+    # Mypy overloads are marked as errors
+    F811
+
+

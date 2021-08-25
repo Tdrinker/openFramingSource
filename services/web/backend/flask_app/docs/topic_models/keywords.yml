@@ -1,0 +1,20 @@
+This URL refers to a get request for getting details about keywords in topics.
+---
+  tags:
+    - Topic Model Preview
+  parameters:
+    - name: topic_model_id
+      in: path
+      type: integer
+      required: true
+  responses:
+    200:
+      description: details related to a Topic Model instance.
+      schema:
+        id: Topic Model keywords
+        properties:
+          Keywords:
+            type: string
+            description: will give a file containing all the keywords related to topics.
+    500:
+      description: fails if a string is provided or if topic model does not exist
