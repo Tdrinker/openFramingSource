@@ -100,7 +100,7 @@ class AlreadyExists(HTTPException):
     description = "The resource already exists."
 
 
-email_expr = re.compile(r"\"?([-a-zA-Z0-9.`?{}]+@\w+\.\w+)\"?")
+email_expr = re.compile(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b');
 
 
 class ResourceProtocol(TT.Protocol):
@@ -147,7 +147,7 @@ class BaseResource(Resource):
     def _validate_email(val: T.Any) -> str:
         if not isinstance(val, str):
             raise ValueError("must be str")
-        elif re.match(email_expr, val):
+        elif re.fullmatch(email_expr, val):
             return val
         else:
             raise ValueError("Not a valid email.")

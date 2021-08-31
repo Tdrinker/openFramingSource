@@ -26,7 +26,7 @@ class ClassifierMixin(RQWorkerMixin, AppMixin):
         super().setUp()
         # Create a classifer in the database
         self._clsf = models.Classifier.create(
-            notify_at_email="davidat@bu.edu",
+            notify_at_email="test@placeholder.com",
             name="test_classifier",
             category_names=["up", "down"],
         )
@@ -249,7 +249,7 @@ class TestClassifiersTrainingFile(ClassifierMixin):
             test_set_name = "my first test set ever!"
             req_json = {
                 "test_set_name": test_set_name,
-                "notify_at_email": "davidat@bu.edu",
+                "notify_at_email": "test@placeholder.com",
             }
 
             resp = client.post(main_test_sets_url, json=req_json)

@@ -10,9 +10,7 @@ category_names = ['Politics', '2nd Amendment rights', 'Gun control',
     'Public opinion', 'Mental health', 'School or public space safety', 
     'Society', 'Race', 'Economic consequences']
 
-data = {
-    "name": "samesex classifier", "notify_at_email": "vibs97@bu.edu"
-    }
+
 res = requests.post('http://www.openframing.org:5000/api/classifiers/', json=data)
 print(res.text)
 """
@@ -34,7 +32,7 @@ print(res.text)
 # /api/classifiers/1/test_sets post
 """
 data = {
-    "test_set_name": "sample classifier_prediction_set1", "notify_at_email": "vibs97@bu.edu"
+    "test_set_name": "sample classifier_prediction_set1", "notify_at_email": "test@placeholder.com"
 }
 res = requests.post('http://0.0.0.0:5000/api/classifiers/4/test_sets/', json=data)
 print(res.text)
@@ -76,7 +74,7 @@ res = requests.get('http://0.0.0.0:5000/api/classifiers/7/test_sets/1/prediction
 """
 data = {
     "topic_model_name": "all things must pass", "num_topics": 10, 
-    "notify_at_email": "vibs97@bu.edu", "language": "english",
+    "notify_at_email": "test@placeholder.com", "language": "english",
     "remove_stopwords": True, "remove_punctuation": True, 
     "do_stemming": True, "do_lemmatizing": True, "min_word_length": 2
     }

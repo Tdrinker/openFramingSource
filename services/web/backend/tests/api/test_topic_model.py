@@ -29,7 +29,7 @@ class TopicModelMixin(RQWorkerMixin, AppMixin):
                 Settings.DEFAULT_TOPIC_NAME_TEMPLATE.format(topic_num)
                 for topic_num in range(1, num_topics + 1)
             ],
-            notify_at_email="davidat@bu.edu",
+            notify_at_email="test@placeholder.com",
         )
 
         # Make sure the directory for the topic model exists
@@ -130,7 +130,7 @@ class TestTopicModels(TopicModelMixin, unittest.TestCase):
                     json={
                         "topic_model_name": "test_topic_model",
                         "num_topics": num_topics,
-                        "notify_at_email": "davidat@bu.edu",
+                        "notify_at_email": "test@placeholder.com",
                     },
                 ) as resp:
                     self._assert_response_success(resp, url)
@@ -148,7 +148,7 @@ class TestTopicModels(TopicModelMixin, unittest.TestCase):
                         ],
                         "status": "not_begun",
                         "metrics": None,
-                        "notify_at_email": "davidat@bu.edu",
+                        "notify_at_email": "test@placeholder.com",
                     }
                 )
 
