@@ -4,9 +4,7 @@
 Currently there are unit tests using `unittest` from the Python Standard Library in the
 [backend/tests/](backend/tests/) directory. In addition, we have continuous integration
 setup on Github. Everytime someone makes a pull request to `master`, Github
-automatically starts testing the code and shows the result in the pull request. Have a
-look at [this pull request](https://github.com/davidatbu/openFraming/pull/144) where
-this continuous integration was setup for what that looks like.
+automatically starts testing the code and shows the result in the pull request.
 
 Therefore, before making any pull requests that affect the backend, it is wise to make
 sure that all the tests are passing locally on your machine. To run all the tests, you
