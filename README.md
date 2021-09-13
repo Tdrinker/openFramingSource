@@ -1,8 +1,6 @@
-# OpenFraming
-
 ## Introduction
 
-We have introduced OpenFraming, a Web-based system for analyzing and classifying frames in the text documents. OpenFraming is designed to lower the barriers to applying machine learning for frame analysis, including giving researchers the capability to build models using their own labeled data. Its architecture is designed to be user-friendly and easily navigable, empowering researchers to com- fortably make sense of their text corpora without specific machine learning knowledge.
+We here propose ABC (real name omitted for the blind review), a Web-based system for analyzing and classifying frames in text documents such as news articles. ABC is designed to lower the barriers to applying machine learning for framing analysis, including giving researchers the capability to build models using their own labeled data. Its architecture is designed to be user-friendly and easily navigable, empowering researchers to comfortably make sense of their text corpora without specific programming experience.
 
 ## Requirements
 
@@ -16,10 +14,8 @@ The link above has guides on how to install Docker on the most popular platforms
 
 ## How to install
 
- 1. `git clone https://github.com/Tdrinker/openFramingSource.git`
- 2. `cd openFramingSource`
- 3. `docker-compose build`
- 4. `docker-compose up`
+ `docker-compose build`
+ `docker-compose up`
  
  You might have to add `sudo` at the beginning of commands at step 3 and 4 if using linux/macOS.
 
