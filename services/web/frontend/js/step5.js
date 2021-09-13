@@ -1,22 +1,21 @@
-
 /* * * * * */
 /*  DATA   */
 /* * * * * */
 
 
-function submitTestSet(id, spinnerId, errorId, submitId) {
+function submitTestSet(id, append="") {
     let isNum = /^\d+$/.test(id);
     if (isNum === false) {
-        $('#error5-text').html('Please enter a numeric value for your ID');
-        $('#error5').removeClass('hidden');
+        $(`#error5-text${append}`).html('Please enter a numeric value for your ID');
+        $(`#error5${append}`).removeClass('hidden');
     } else {
-        $('#error5').addClass('hidden');
+        $(`#error5${append}`).addClass('hidden');
 
         // POST request for topic model
         const POST_TEST_SET = `${BASE_URL}/classifiers/${id}/test_sets/`;
         let postData = {
-            test_set_name: $('#pt-name').val(),
-            notify_at_email: $('#pt-email').val()
+            test_set_name: $(`#pt-name${append}`).val(),
+            notify_at_email: $(`#pt-email${append}`).val()
         };
         $.ajax({
             url: POST_TEST_SET,
@@ -31,7 +30,7 @@ function submitTestSet(id, spinnerId, errorId, submitId) {
                 let t_id = data.test_set_id;
                 const POST_PT_TESTING_FILE = `${BASE_URL}/classifiers/${c_id}/test_sets/${t_id}/file`;
                 let fileFD = new FormData();
-                fileFD.append('file', document.getElementById("pt-testing-invisible").files[0]);
+                fileFD.append('file', document.getElementById(`pt-testing-invisible${append}`).files[0]);
 
                 $.ajax({
                     url: POST_PT_TESTING_FILE,
@@ -42,24 +41,26 @@ function submitTestSet(id, spinnerId, errorId, submitId) {
                     success: function () {
                         console.log('STEP 5 - success in testing file POST');
                         pingClassifierStatus(c_id, t_id);
-                        $(spinnerId).hide();
-                        $(submitId).removeClass("disabled");
+                        $(`#pt-spinner${append}`).hide();
+                        $(`#submit5${append}`).removeClass("disabled");
                     },
                     error: function (xhr, status, err) {
                         console.log(xhr.responseText);
                         let error = getErrorMessage(JSON.parse(xhr.responseText).message);
-                        $(errorId).html(`An error occurred while uploading your file: ${error}`).removeClass('hidden');
-                        $(spinnerId).hide();
-                        $(submitId).removeClass("disabled");
+                        $(`#error5-text${append}`).html(`An error occurred while uploading your file: ${error}`);
+                        $(`#error5${append}`).removeClass('hidden');
+                        $(`#pt-spinner${append}`).hide();
+                        $(`#submit5${append}`).removeClass("disabled");
                     }
                 });
             },
             error: function (xhr, status, err) {
                 console.log(xhr.responseText);
                 let error = getErrorMessage(JSON.parse(xhr.responseText).message);
-                $(errorId).html(`An error occurred while creating the test set: ${error}`).removeClass('hidden');
-                $(spinnerId).hide();
-                $(submitId).removeClass("disabled");
+                $(`#error5-text${append}`).html(`An error occurred while creating the test set: ${error}`);
+                $(`#error5${append}`).removeClass('hidden');
+                $(`#pt-spinner${append}`).hide();
+                $(`#submit5${append}`).removeClass("disabled");
             }
         });
     }
@@ -144,7 +145,7 @@ $(document).ready(function() {
             $('#submit5').addClass("disabled");
 
             const id = $('#pt-id').val();
-            submitTestSet(id, '#pt-spinner', '#error5', 'submit5');
+            submitTestSet(id);
 
         }
     });
@@ -171,7 +172,7 @@ $(document).ready(function() {
             $('#submit5-2').addClass("disabled");
 
             const id = $("input[type='radio'][name='policyissue']:checked").val();
-            submitTestSet(id, '#pt-spinner-2', '#error5-2', 'submit5-2');
+            submitTestSet(id, "-2");
 
         }
     })
@@ -187,4 +188,3 @@ $(document).ready(function() {
 function clearOptions() {
     $("input[name='policyissue']:checked").val([]);
 }
-
