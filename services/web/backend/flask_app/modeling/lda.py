@@ -292,6 +292,7 @@ class LDAModeler(object):
 
         self.lda_model: T.Optional[models.wrappers.LdaMallet] = None
         self.num_topics = 0
+        self.num_keywords = 0
         self.iterations = iterations
 
     def model_topics(
@@ -302,6 +303,7 @@ class LDAModeler(object):
         float, T.List[T.List[str]], T.Any, T.Iterator[T.List[T.Tuple[int, float]]]
     ]:
         self.num_topics = num_topics
+        self.num_keywords = num_keywords
         mallet_path = Path(self.mallet_bin_directory) / "mallet"
         if not mallet_path.exists():
             raise Exception(
@@ -350,8 +352,8 @@ class LDAModeler(object):
         Returns:
             umass_coherence:
         """
-
         self.num_topics = num_topics
+        self.num_keywords = num_keywords
         (
             umass_coherence,
             topic_keywords,

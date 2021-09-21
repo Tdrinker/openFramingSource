@@ -4,6 +4,7 @@ transformers_cache/
 
 # For the database
 sqlite.db
+sqlite2.db
 
 # vim related
 Session.vim

@@ -22,6 +22,9 @@ This URL refers to a get request for getting details of a single Topic Model.
           num_topics:
             type: int
             description: number of topics to produce.
+          num_keywords:
+            type: int
+            description: number of topics to produce.
           topic_names:
             type: array
             description: list of topic names.

@@ -148,7 +148,6 @@ class Classifier(BaseModel):
         return super(Classifier, cls).create(
             name=name, category_names=category_names, notify_at_email=notify_at_email
         )
-
     classifier_id: int = pw.AutoField(primary_key=True)  # type: ignore
     name: str = pw.TextField()  # type: ignore
     category_names: T.List[str] = ListField()  # type: ignore
@@ -177,7 +176,6 @@ class TestSet(BaseModel):
         return super(TestSet, cls).create(
             name=name, classifier=classifier, notify_at_email=notify_at_email
         )
-
     # TODO: The primary key here should be composite of classifier and id field.
     # Right now, we have checks in app.py to make sure a certain classifier id/test set
     # id combo exists, but that's not good design at all.
@@ -213,26 +211,27 @@ class TopicModel(BaseModel):
 
     @classmethod
     def create(  # type: ignore[override]
-        cls, name: str, num_topics: int, notify_at_email: str, topic_names: T.List[str],
+        cls, name: str, num_topics: int, num_keywords: int, notify_at_email: str, topic_names: T.List[str],
         language: str, processing: TopicModelProcessing
     ) -> "TopicModel":
         assert len(topic_names) == num_topics
         return super(TopicModel, cls).create(
             name=name,
             num_topics=num_topics,
+            num_keywords=num_keywords,
             notify_at_email=notify_at_email,
             topic_names=topic_names,
             language=language,
             processing=processing
         )
-
     id_: int = pw.AutoField()
     name: str = pw.CharField()
     num_topics: int = pw.IntegerField()
+    num_keywords: int = pw.IntegerField()
     topic_names: T.List[str] = ListField(null=True)  # type: ignore
     lda_set: T.Optional[LDASet] = pw.ForeignKeyField(LDASet, null=True)  # type: ignore
     notify_at_email: str = pw.TextField()  # type: ignore
-    language:str = pw.TextField()
+    language: str = pw.TextField()
     processing: T.Optional[TopicModelProcessing] = pw.ForeignKeyField(TopicModelProcessing, null=True)
 
     # NOTE: The below is ONLY a type annotation.

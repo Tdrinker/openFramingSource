@@ -115,7 +115,7 @@ class Settings:
             cls.TRANSFORMERS_CACHE_DIRECTORY = (
                 Path(cls.PROJECT_DATA_DIRECTORY) / "transformers_cache"
             )
-        cls.DATABASE_FILE = Path(cls.PROJECT_DATA_DIRECTORY) / "sqlite.db"
+        cls.DATABASE_FILE = Path(cls.PROJECT_DATA_DIRECTORY) / "sqlite2.db"
         cls.MALLET_BIN_DIRECTORY = Path(settings_tup.MALLET_BIN_DIRECTORY)
         cls.REDIS_HOST = settings_tup.REDIS_HOST
         cls.REDIS_PORT = settings_tup.REDIS_PORT

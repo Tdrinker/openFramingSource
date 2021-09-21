@@ -741,6 +741,7 @@ class TopicModelStatusJson(TypedDict):
     topic_model_id: int
     topic_model_name: str
     num_topics: int
+    num_keywords: int
     topic_names: T.Optional[T.List[str]]
     notify_at_email: str
     metrics: T.Optional[TopicModelMetricsJson]
@@ -816,6 +817,7 @@ class TopicModelRelatedResource(BaseResource):
             topic_model_name=topic_mdl.name,
             topic_model_id=topic_mdl.id_,
             num_topics=topic_mdl.num_topics,
+            num_keywords=topic_mdl.num_keywords,
             topic_names=topic_names,
             notify_at_email=topic_mdl.notify_at_email,
             language=topic_mdl.language,
@@ -873,6 +875,13 @@ class TopicModels(TopicModelRelatedResource):
             required=True,
             location="json",
             help="The number of topics must be an integer greater than 1.",
+        )
+        self.reqparse.add_argument(
+            name="num_keywords",
+            type=greater_than_1,
+            required=True,
+            location="json",
+            help="The number of keywords must be an integer greater than 1.",
         )
         self.reqparse.add_argument(
             name="notify_at_email",
@@ -958,6 +967,7 @@ class TopicModels(TopicModelRelatedResource):
             name=args["topic_model_name"],
             topic_names=[f"Topic {i}" for i in range(1, args["num_topics"] + 1)],
             num_topics=args["num_topics"],
+            num_keywords=args["num_keywords"],
             notify_at_email=args["notify_at_email"],
             language=args["language"],
             processing=topic_mdl_processing
@@ -1118,6 +1128,7 @@ class TopicModelsTopicsPreview(TopicModelRelatedResource):
                 "topic_model_id": topic_mdl_status_json["topic_model_id"],
                 "topic_model_name": topic_mdl_status_json["topic_model_name"],
                 "num_topics": topic_mdl_status_json["num_topics"],
+                "num_keywords": topic_mdl_status_json["num_keywords"],
                 "topic_names": topic_mdl_status_json["topic_names"],
                 "notify_at_email": topic_mdl.notify_at_email,  # TODO: umm, why the black sheep?
                 "status": topic_mdl_status_json["status"],

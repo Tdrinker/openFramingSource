@@ -155,6 +155,7 @@ def do_topic_model_related_task(task_args: TopicModelTrainingTaskArgs,
         metrics = lda_modeler.model_topics_to_spreadsheet(
             num_topics=topic_mdl.num_topics,
             default_topic_names=topic_mdl.topic_names,
+            num_keywords=topic_mdl.num_keywords,
             fname_keywords=task_args["fname_keywords"],
             fname_topics_by_doc=task_args["fname_topics_by_doc"],
         )
