@@ -9,6 +9,8 @@ node_modules/
 .tern-project
 services/web/frontend/visualization/node_modules
 
+.idea/
+
 # For the database
 sqlite.db
 sqlite2.db
