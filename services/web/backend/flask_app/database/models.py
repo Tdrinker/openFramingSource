@@ -134,7 +134,7 @@ class Classifier(BaseModel):
         name: Name of classiifer.
         category_names: Comma separated names of categories. Means category names can't
             have commas.
-        trained_by_openFraming: Whether this is a classifier that openFraming provides,
+        trained_by_abc: Whether this is a classifier that abc provides,
             or a user trained.
         train_set: The train set for classififer.
         dev_set: The dev set for classififer.
@@ -151,7 +151,7 @@ class Classifier(BaseModel):
     classifier_id: int = pw.AutoField(primary_key=True)  # type: ignore
     name: str = pw.TextField()  # type: ignore
     category_names: T.List[str] = ListField()  # type: ignore
-    trained_by_openFraming: bool = pw.BooleanField(default=False)  # type: ignore
+    trained_by_abc: bool = pw.BooleanField(default=False)  # type: ignore
     train_set: T.Optional[LabeledSet] = pw.ForeignKeyField(LabeledSet, null=True)  # type: ignore
     notify_at_email: str = pw.TextField()  # type: ignore
     dev_set: T.Optional[LabeledSet] = pw.ForeignKeyField(LabeledSet, null=True)  # type: ignore

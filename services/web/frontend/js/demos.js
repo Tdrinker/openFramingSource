@@ -282,6 +282,8 @@ function completeObject(x, separate_categories){
   }
 
   function process_data(data, data_processing){
+    console.log("data_processing: ", data_processing)
+    console.log("data to process: ", data)
     let count_category = []
     if(data_processing.indexOf('left')!=-1){
         temp = data.filter(x=>{
@@ -327,11 +329,27 @@ function completeObject(x, separate_categories){
     }
 
     if(data_processing.indexOf('2018')!=-1){
-        temp = data.filter(x=>{
-            if(x.date.getFullYear()==2018){
+        var set1 = ("Waffengewalt" || "Massenschießerei" || "Massenschiesserei"
+        || "Massenschießereien" || "Massenschiessereien" || "Waffenrecht"
+        || "Waffengesetz" || "zweite Verfassungszusatz" || "zweiten Verfassungszusatz" || "Amoklauf")
+
+        var set2 = ("USA" || "Vereinigte Staaten" || "Amerika" || "Trump")
+
+        temp_hasKeywords = data.filter(x=>{
+            if (x.title.includes(set1 && set2)) {
                 return x
             }
         });
+
+        console.log("After keywords search size ", temp_hasKeywords.length)
+
+        temp = data.filter(x=>{
+            if(x.date.getFullYear()==18){
+                return x
+            }
+        });
+        console.log("2018 with size ", temp.length, ": ", temp)
+        console.log(data[0].date.getFullYear())
         count_category = count_category.concat(temp);
     }
 
@@ -588,10 +606,22 @@ function add_names_to_div(some){
 function plot_pie_chart(data_processing){
     var some = process_data(GUN_DATA, data_processing);
     console.log(some);
+
+    original = JSON.parse(JSON.stringify(d3.schemeSet1))
+    colors = d3.schemeSet1
+    colors[1] = "#2ABECE"
+    colors[2] = "#377eb8"
+    colors[3] = "#4daf4a"
+    colors[4] = "#D52A2E"
+    colors[5] = "#855EA7"
+
+    console.log("d3.schemeSet1: ", original)
+    console.log("colors       : ", colors)
+
     if(color_pie==null){
         color_pie = d3.scaleOrdinal()
             .domain(Object.keys(some))
-            .range(d3.schemeCategory10);
+            .range(colors);
     }
     update(some[0], color_pie)
     create_bar(some[1], color_pie);
@@ -643,8 +673,8 @@ function check_clicked(val){
 $(document).ready(function() {
 
     // $("#step4")
-
-    d3.csv("datasets/gunviolence_data.csv",function(d) {
+    console.log("readying")
+    d3.csv("datasets/german_gunviolence_data.csv",function(d) {
         return {
             date : parse3(d.date),
             name : d.name,

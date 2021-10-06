@@ -22,7 +22,7 @@ function getTMPreview(id) {
                 $('#tm-prev-name').empty().append(data.topic_model_name);
                 $('#tm-prev-num').empty().append(data.num_topics);
                 $('#previews').empty();
-                $('#get-results').attr('href', `http://www.openframing.org:5000/api/topic_models/${id}/topic_zipped`);
+                $('#get-results').attr('href', `http://127.0.0.1:5000/api/topic_models/${id}/topic_zipped`);
                 showPreviews(data);
             },
             error: function (xhr, status, err) {

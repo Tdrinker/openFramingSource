@@ -9,8 +9,8 @@ sqlite2.db
 # vim related
 Session.vim
 
-# related to virt env openFraming
-openFraming
+# related to virt env abc
+abc
 venv
 
 # py cache and swap files

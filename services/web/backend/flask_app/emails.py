@@ -93,12 +93,12 @@ class EmailTemplate(TT.TypedDict):
 
 _email_templates: TT.Final[T.Dict[str, EmailTemplate]] = {
     "classifier_training_finished": EmailTemplate(
-        subject="[openFraming] Policy issue classifier training completed.",
+        subject="[abc] Policy issue classifier training completed.",
         html_content=(
-            """<h2>OpenFraming</h2>
+            """<h2>abc</h2>
 <p>Hi there!</p>
 
-<p>Thank you for using the service on openframing.org. 
+<p>Thank you for using the service on abc.org. 
 The deep learning classifier named: <b>{classifier_name}</b> has completed training. The id
 for this classifier is: <b>{classifier_id}</b>.</p>
 <p>Please remember you will need this id to retrieve the model from our website.</p>
@@ -108,17 +108,17 @@ for this classifier is: <b>{classifier_id}</b>.</p>
 </p>
 
 <p>If you are satisfied with the performance of the classification model, 
-you can go to the openFraming website and use trained model to predict unlabelled data here:
-<a href="http://www.openframing.org/playground.html?step=5">openframing.org/playground.html</a></p>
+you can go to the abc website and use trained model to predict unlabelled data here:
+<a href="http://127.0.0.1/playground.html?step=5">abc.org/playground.html</a></p>
 
 <p>Cheers!</p>
 """
         ),
     ),
     "classifier_inference_finished": EmailTemplate(
-        subject="[openFraming] Predictions on unlabelled dataset was completed.",
+        subject="[abc] Predictions on unlabelled dataset was completed.",
         html_content=(
-            """<h2>OpenFraming</h2>
+            """<h2>abc</h2>
 <p>Hi there!</p>
 
 <p>You requested to run predictions on an unlabelled dataset with the following
@@ -132,9 +132,9 @@ your results.</p>
         ),
     ),
     "topic_model_training_finished": EmailTemplate(
-        subject="[openFraming] Topic modeling completed.",
+        subject="[abc] Topic modeling completed.",
         html_content=(
-            """<h2>OpenFraming</h2>
+            """<h2>abc</h2>
 <p>Hello!</p>
 
 <p>You requested to run topic modeling with your chosen topic model name of:
@@ -146,7 +146,7 @@ with:</p>
 {metrics_html}
 </p>
 
-<p>Topic modeling has completed! Please <a href="http://www.openframing.org/playground.html?step=1&id={topic_model_id}">click here</a> to
+<p>Topic modeling has completed! Please <a href="http://127.0.0.1/playground.html?step=1&id={topic_model_id}">click here</a> to
 view your topic modeling results.  On that page, you'll be able to preview the topics
 discovered, and give the topic models names. You'll of course, be able to download the
 results of the topic modeling.</p>
@@ -156,12 +156,12 @@ results of the topic modeling.</p>
         ),
     ),
     "classifier_training_error": EmailTemplate(
-        subject="[openFraming] Error encountered in policy issue classifier training.",
+        subject="[abc] Error encountered in policy issue classifier training.",
         html_content=(
-            """<h2>OpenFraming</h2>
+            """<h2>abc</h2>
 <p>Hello,</p>
 
-<p>The policy issue classifier you started training on openFraming.org has encountered
+<p>The policy issue classifier you started training on abc.org has encountered
 an error. The name you gave to this policy issue classifier was: {classifier_name}.</p>
 
 <p>Unfortunately, you'll have to begin training again. If the problem persists, please
@@ -172,9 +172,9 @@ contact us by replying to this email.</p>
         ),
     ),
     "classifier_inference_errror": EmailTemplate(
-        subject="[openFraming] Error encountered while doing inference on unlabelled dataset.",
+        subject="[abc] Error encountered while doing inference on unlabelled dataset.",
         html_content=(
-            """<h2>OpenFraming</h2>
+            """<h2>abc</h2>
 <p>Hi there,</p>
 
 <p>You requested to run inference on an unlabelled dataset with the following policy
@@ -189,9 +189,9 @@ persists, please contact us by replying to this email.</p>
         ),
     ),
     "topic_model_training_errror": EmailTemplate(
-        subject="[openFraming] Error encountered in topic modeling.",
+        subject="[abc] Error encountered in topic modeling.",
         html_content=(
-            """<h2>OpenFraming</h2>
+            """<h2>abc</h2>
 <p>Hello,</p>
 
 <p>You requested to run topic modeling with your chosen topic model name of:

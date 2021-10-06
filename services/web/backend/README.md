@@ -54,8 +54,8 @@ Empty.
      # Something like "gun violence", or "climate change"
      "classifier_name": str,
 
-     # Whether this classifier was provided by openFraming, or the user trianed it
-     "provided_by_openFraming": bool,
+     # Whether this classifier was provided by abc, or the user trianed it
+     "provided_by_abc": bool,
 
      # For "gun violence", might be things like "Economic consequences", "Gun rights", "Gun control", "Poltiics". "Public opinion"
      "category_names": [str, ...],
@@ -117,8 +117,8 @@ the new classifier and what the categories should be.
   "category_names": [str, ...],
 
   # Note here this will always be False because the user created this classifier,
-  # it's not provided by openFraming.
-  "provided_by_openFraming": False,
+  # it's not provided by abc.
+  "provided_by_abc": False,
 
   # The classifier was just created. No  training data was uploaded yet.
   "status": "not_begun"
@@ -148,7 +148,7 @@ Empty.
 { 
   "classifier_id": int, 
   "classifier_name": str,
-  "provided_by_openFraming": bool,
+  "provided_by_abc": bool,
   "category_names": [str, ...],
   "status": One_of("not_begun", "training", "error_encountered", "completed")
   "notify_at_email": str,
@@ -200,7 +200,7 @@ headers are mandatory as well.
 { 
   "classifier_id": int, 
   "classifier_name": str,
-  "provided_by_openFraming": False,
+  "provided_by_abc": False,
   "category_names": [str, ...],
   "notify_at_email": str,
 

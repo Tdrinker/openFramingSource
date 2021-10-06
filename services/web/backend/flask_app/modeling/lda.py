@@ -360,7 +360,7 @@ class LDAModeler(object):
             topic_proportions,
             topics_by_doc,
         ) = self.model_topics(self.num_topics, num_keywords)
-
+        print("number of keywords: ", num_keywords)
         topic_keywords_df = pd.DataFrame()
         for w_idx in range(num_keywords):
             topic_keywords_df["word_{}".format(str(w_idx))] = [

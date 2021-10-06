@@ -11,7 +11,7 @@ category_names = ['Politics', '2nd Amendment rights', 'Gun control',
     'Society', 'Race', 'Economic consequences']
 
 
-res = requests.post('http://www.openframing.org:5000/api/classifiers/', json=data)
+res = requests.post('http://127.0.0.1:5000/api/classifiers/', json=data)
 print(res.text)
 """
 
@@ -45,7 +45,7 @@ metrics = ['0.9261538461538462', '0.879877077719961', '0.8812814391247712', '0.8
 data = {
     "category_names": category_names, "metrics": metrics
 }
-res = requests.post('http://www.openframing.org:5000/api/classifiers/3/set_status_to_be_completed', json=data)
+res = requests.post('http://127.0.0.1:5000/api/classifiers/3/set_status_to_be_completed', json=data)
 print(res.text)
 """
 

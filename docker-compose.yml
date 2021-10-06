@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   web:
-    image: openframing_web_image
+    image: abc_web_image
     restart: always
     build:
       context: ./services/web
@@ -38,7 +38,7 @@ services:
       - "${REDIS_PORT}"
 
   classifiers_worker:
-    image: openframing_web_image
+    image: abc_web_image
     restart: always
     command: [ "rq", "worker", "--url", "redis://${REDIS_HOST}:${REDIS_PORT}", "classifiers" ]
     depends_on:
@@ -57,7 +57,7 @@ services:
       # worker will import settings.py, which needs them to be set.
 
   topic_model_worker:
-    image: openframing_web_image
+    image: abc_web_image
     restart: always
     command: [ "rq", "worker", "--url", "redis://${REDIS_HOST}:${REDIS_PORT}", "topic_models" ]
     depends_on:

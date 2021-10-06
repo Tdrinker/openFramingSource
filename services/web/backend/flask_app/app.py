@@ -157,7 +157,7 @@ class ClassifierStatusJson(TypedDict):
     classifier_id: int
     classifier_name: str
     category_names: T.List[str]
-    trained_by_openFraming: bool
+    trained_by_abc: bool
     status: TT.Literal["not_begun", "training", "error_encountered", "completed"]
     notify_at_email: str
     metrics: T.Optional[ClassifierMetricsJson]
@@ -197,7 +197,7 @@ class ClassifierRelatedResource(BaseResource):
             {
                 "classifier_id": clsf.classifier_id,
                 "classifier_name": clsf.name,
-                "trained_by_openFraming": clsf.trained_by_openFraming,
+                "trained_by_abc": clsf.trained_by_abc,
                 "category_names": category_names,
                 "notify_at_email": clsf.notify_at_email,
                 "status": status,
@@ -1471,17 +1471,17 @@ def create_app(logging_level: int = logging.WARNING) -> Flask:
     template = {
         "swagger": "2.0",
         "info": {
-            "title": "OpenFraming API documentation",
+            "title": "abc API documentation",
             "description": "A minimal UI for checking out API documentation",
             "version": "0.1.1",
             "contact": {
             "name": "Derry Wijaya, Lei Guo",
-            "url": "help.openframing@gmail.com",
+            "url": "abcreviewblind@gmail.com",
             }
         },
     }
     app.config['SWAGGER'] = {
-        'title': 'OpenFraming API',
+        'title': 'abc API',
         'uiversion': 3,
         'specs_route': '/docs/',
         'doc_dir': '/docs/'

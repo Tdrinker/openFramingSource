@@ -382,7 +382,7 @@ class ClassifierModel(object):
         # predicting using the model and getting the results returned in Python.
         # But alas, it does.
         if self.output_dir is None:
-            output_dir = tempfile.mkdtemp(prefix="openFraming_prediction")
+            output_dir = tempfile.mkdtemp(prefix="abc_prediction")
         else:
             output_dir = self.output_dir
 

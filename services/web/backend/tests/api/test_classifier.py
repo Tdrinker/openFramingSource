@@ -61,7 +61,7 @@ class TestClassifiers(ClassifierMixin, unittest.TestCase):
                 category_names=self._clsf.category_names,
                 notify_at_email=self._clsf.notify_at_email,
                 status="not_begun",
-                trained_by_openFraming=False,
+                trained_by_abc=False,
                 metrics=None,
             )
             self.assertDictEqual(clsf_status, dict(expected_classifier_status))
@@ -81,7 +81,7 @@ class TestClassifiers(ClassifierMixin, unittest.TestCase):
                 category_names=self._clsf.category_names,
                 notify_at_email=self._clsf.notify_at_email,
                 status="not_begun",
-                trained_by_openFraming=False,
+                trained_by_abcenFraming=False,
                 metrics=None,
             )
             self.assertDictEqual(clsf_status, dict(expected_classifier_status))
@@ -112,7 +112,7 @@ class TestClassifiers(ClassifierMixin, unittest.TestCase):
                 category_names=self._clsf.category_names,
                 notify_at_email=self._clsf.notify_at_email,
                 status="training",
-                trained_by_openFraming=False,
+                trained_by_abc=False,
                 metrics=None,
             )
             clsf_status = res.get_json()
@@ -216,7 +216,7 @@ class TestClassifiersTrainingFile(ClassifierMixin):
                 category_names=self._clsf.category_names,
                 notify_at_email=self._clsf.notify_at_email,
                 status="completed",
-                trained_by_openFraming=False,
+                trained_by_abc=False,
                 metrics=None,
             )
 

@@ -5,7 +5,7 @@
         integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 
   <link rel="stylesheet" href="css/home.css">
-  <link rel="icon" href="images/openframing.png" type="image/x-icon" />
+  <link rel="icon" href="images/abc.png" type="image/x-icon" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Monda&display=swap" rel="stylesheet">  <!-- Monda font -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> <!-- Roboto font -->
@@ -46,13 +46,13 @@
       }
   </script>
 
-  <title>Open Framing</title>
+  <title>abc</title>
 </head>
 
 <body style="background-image: none !important;">
 
 <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-  <a class="navbar-brand" href="home.html"><img src="images/openframing.png" class="logo">OpenFraming AI</a>
+  <a class="navbar-brand" href="home.html"><img src="images/abc.png" class="logo">ABC</a>
   <ul class="navbar-nav ml-auto">
     <li class="nav-item">
       <a class="nav-link" href="playground.html">Get Started</a>
@@ -64,10 +64,7 @@
       <a class="nav-link" href="faq.html">FAQ</a>
     </li>
     <li class="nav-item">
-      <a target="_blank" class="nav-link" href="https://github.com/Tdrinker/openFramingSource">Source Code</a>
-    </li>
-    <li class="nav-item">
-      <a target="_blank" class="nav-link" href="http://www.openframing.org:5000/docs/">API</a>
+      <a target="_blank" class="nav-link" href="http://127.0.0.1:5000/docs/">API</a>
     </li>
   </ul>
 </nav>
@@ -206,23 +203,15 @@
                 </li>
               </ul>
             </li>
-            <li><b>Q: Can I get access to your code?</b>
-              <ul>
-                <li>
-                  Yes, you can find our code on our <a target="_blank" href="https://github.com/Tdrinker/openFramingSource">Github page</a>.
-                </li>
-              </ul>
-            </li>
             <li><b>Q: What if I want to make some changes to the topic modeling and/or the deep learning algorithms?</b>
               <ul>
                 <li>
                   You may choose to customize some parameters through our web-based system (e.g., the number of the LDA
-                  topics). In order to further fine-tune the algorithms, you will need to have some programming experience
-                  and our code can be found on our <a target="_blank" href="https://github.com/Tdrinker/openFramingSource">Github page</a>.
+                  topics).
                 </li>
               </ul>
             </li>
-            <li><b>Q: Your system is called OpenFraming. Can I use your system to do other types of analysis, e.g., sentiment detection?</b>
+            <li><b>Q: Your system is called abc. Can I use your system to do other types of analysis, e.g., sentiment detection?</b>
               <ul>
                 <li>
                   There are multiple ways to use our system.
@@ -405,7 +394,7 @@
               <ul>
                 <li>
                   To reduce the bias of selecting training and testing data, K-fold cross-validation is an effective
-                  method to validate the model performance on multiple folds of the data. The OFAI implements 5-fold
+                  method to validate the model performance on multiple folds of the data. The abc implements 5-fold
                   cross-validation. Specifically, the user-labeled data will be randomly split into five folds. For each
                   fold, we take the documents in this fold as the testing set and the documents in the remaining four
                   folds as a training set. A model is trained on the training set and evaluated on the testing set.
@@ -416,7 +405,7 @@
             <li><b>Q: What is considered "good" model performance? </b>
               <ul>
                 <li>
-                  OFAI provides three evaluation scores - precision, recall, and F-score - to assess the performance of the
+                  abc provides three evaluation scores - precision, recall, and F-score - to assess the performance of the
                   trained models. Precision is the ratio of true positives to the total predicted positive observations.
                   For example, when predicting a given frame "mental health," the precision score measures out of all the
                   news headlines predicted as "mental health," how many of them are indeed coded as "mental health" by

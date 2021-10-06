@@ -45,7 +45,7 @@ class TestEmails(AppMixin, unittest.TestCase):
                 email_template_name="topic_model_training_finished",
                 to_email="test@placeholder.com",
                 topic_model_name="test_email.py_TopicModel",
-                topic_model_preview_url="http://www.openframing.org/DOESNTEXISTYET",
+                topic_model_preview_url="http://127.0.0.1/DOESNTEXISTYET",
                 metrics={"topic_model_metric_1": 0.9},
             )
         except Exception as e:
