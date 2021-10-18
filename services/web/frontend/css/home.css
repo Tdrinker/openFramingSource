@@ -150,7 +150,6 @@ p {
 }
 
 #what-section img {
-    min-width: 200px !important;
     max-width: 350px !important;
     width: 85%;
     /*height: 5%;*/

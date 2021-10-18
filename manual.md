@@ -2,7 +2,7 @@
 
 #### Handy instructions for docker for the next person who wants to take over :
 Go to the project directory, then:
--  `Sudo docker-compose build`, then `sudo docker-compose up` if building this project for the first time
+-  `sudo docker-compose build`, then `sudo docker-compose up` if building this project for the first time
 - If already built for the first time, use `sudo docker-compose up --build` for one step building and running
 - `sudo docker-compose logs` for looking at the most recent logs of al the services
 No need to go to project directory
