@@ -13,11 +13,6 @@ This URL refers to a post request for creating a new Topic Model instance.
       type: int
       description: number of topics to produce.
       required: true
-    - name: num_keywords
-        in: body
-        type: int
-        description: number of keywords to produce.
-        required: true
     - name: notify_at_email
       type: string
       in: body
@@ -76,9 +71,6 @@ This URL refers to a post request for creating a new Topic Model instance.
           num_topics:
             type: int
             description: number of topics to produce.
-          num_keywords:
-            type: int
-            description: number of keywords to produce.
           topic_names:
             type: array
             description: list of topic names.
