@@ -208,7 +208,7 @@ class Validate:
                 if table == []:
                     raise BadRequest("An empty file was uploaded.")
                 # strip blanks
-                table = [[cell.strip() for cell in row] for row in table]
+                table = [[str(cell).strip() for cell in row] for row in table]
                 text_stream.close()
         else:
             raise BadRequest(
@@ -263,7 +263,7 @@ class Validate:
         if table == []:
             raise BadRequest("An empty file was uploaded.")
         # strip blanks
-        table = [[cell.strip() for cell in row] for row in table]
+        table = [[str(cell).strip() for cell in row] for row in table]
         return table
 
     @classmethod
