@@ -171,6 +171,8 @@ $(document).ready(function() {
             $('#pt-spinner-2').show();
             $('#submit5-2').addClass("disabled");
 
+            $('#success5').removeClass('hidden');
+
             const id = $("input[type='radio'][name='policyissue']:checked").val();
             submitTestSet(id, "-2");
 
