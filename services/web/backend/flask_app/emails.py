@@ -290,6 +290,9 @@ class Emailer:
                         for metric_name, metric_value in val.items()
                     )
                     + "\n</ul>"
+                    + "（we use UMass Coherence Score to measure how similar the topic words are to each other."
+                      "The topic coherence gets better as the value of UMass coherence approaches zero. "
+                      "More details can be found in the original article: https://aclanthology.org/D11-1024.pdf）\n"
                 )
                 template_values_html["metrics_html"] = html_value
             else:
