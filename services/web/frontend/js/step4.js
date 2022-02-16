@@ -70,7 +70,7 @@ $(document).ready(function() {
                         error: function (xhr, status, err) {
                             console.log(xhr.responseText);
                             let error = getErrorMessage(JSON.parse(xhr.responseText).message);
-                            $('#error4').html(`An error occurred while uploading your file: ${error}`).removeClass('hidden');
+                            $('#error4').html(`An error occurred while uploading your file: ${error}. <br /> Please double check the format of the data file`).removeClass('hidden');
                         }
                     });
                 },
