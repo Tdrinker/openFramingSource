@@ -39,6 +39,10 @@ sure these environment variables are picked up. i.e.,
 sudo -E docker-compose up
 ```
 
+### Acknowledgement
+This material is based upon work partially supported by the National Science Foundation under Grant No. 1838193. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
+
+
 ## Getting help
 
 If you have any question, concern, or bug report, please file an issue in this repository's Issue Tracker and we will respond accordingly.
