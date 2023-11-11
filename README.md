@@ -40,7 +40,7 @@ sudo -E docker-compose up
 ```
 
 ### Acknowledgement
-This material is based upon work partially supported by the National Science Foundation under Grant No. 1838193. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
+This material is based upon work partially supported by the National Science Foundation under [Grant No. 1838193](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1838193). Any opinions, findings, and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
 
 
 ## Getting help
